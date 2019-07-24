@@ -18,5 +18,18 @@ The server should respond with a JSON object with the following structure:
 }
 ```
 
+Errors can also be returned as an object like this:
+
+```sh
+{
+   ok: true or false,           
+   errors: {
+      field1name: "error message for field 1"
+      field2name: "error message for field 2"
+   }],
+   message: "Display this as a popup message",
+   redirect: "url"
+}
+```
 If ok evaluates to true, the page is redirected to the redirect url. If no redirect url is returned from the server, the page simply reloads. If ok evaluates to false, the error messages are displayed next to the appropriate form fields.
 
